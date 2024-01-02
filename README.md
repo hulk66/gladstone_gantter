@@ -3,7 +3,8 @@
 Utlizing [Nicegui](https://nicegui.io/) and [Mermaid](https://mermaid.js.org/) 
 
 * Editing Gantt Charts in a form based manner
-* Entering start date and duration. End date will be calulated. Or overwrite the the end date
+* Entering start date and duration. End date will be calulated, excluding weekend. Or just provide the end date
+* The end date is used as the start date for the next task
 * Limited Color styling
 * Loading and saving files to json to you local machine 
 * Can be easly dockerized
@@ -20,4 +21,11 @@ Utlizing [Nicegui](https://nicegui.io/) and [Mermaid](https://mermaid.js.org/)
 4. `python -m main.ui`
 
 ## Using the docker image
+    docker pull hulk66/gladstone_gantter
+    docker run -p:8080:8080 hulk66/gladstone_gantter
+
+## Issues
+* Always fill name of swimlanes and tasks before switching to the diagram view. At the moment there is no validation. If not you get an error message on the diagram panel
+* If you happen to see some text instead of the diagram, try a reload. Sometimes this does the trick
+
 
