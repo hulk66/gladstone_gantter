@@ -15,7 +15,7 @@ Utlizing [Nicegui](https://nicegui.io/) and [Mermaid](https://mermaid.js.org/)
 ![Alt text](result.png)
 
 ## Setting up locally
-1. Get the code from guthub
+1. Get the code from github
 2. `conda env create -f env.yaml`
 3. `conda activate gantt`
 4. `python -m main.ui`
