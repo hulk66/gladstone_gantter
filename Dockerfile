@@ -11,5 +11,5 @@ RUN conda env create -f env.yaml
 #RUN  micromamba create -f environment.yml && micromamba clean --all --yes
 
 # Override default shell and use bash
-SHELL ["conda", "run", "-n", "gg", "/bin/bash", "-c"]
-ENTRYPOINT ["conda", "run", "-n", "gg", "python", "-m", "ui.main"]
+SHELL ["conda", "run", "-n", "gantt", "/bin/bash", "-c"]
+ENTRYPOINT ["conda", "run", "-n", "gantt", "python", "-m", "ui.main"]
