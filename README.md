@@ -21,8 +21,8 @@ Utlizing [Nicegui](https://nicegui.io/) and [Mermaid](https://mermaid.js.org/)
 4. `python -m main.ui`
 
 ## Using the docker image
-    docker pull hulk66/gladstone_gantter
     docker run -p:8080:8080 hulk66/gladstone_gantter
+Open http://localhost:8080    
 
 ## Issues
 * Always fill name of swimlanes and tasks before switching to the diagram view. At the moment there is no validation. If not you get an error message on the diagram panel
