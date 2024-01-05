@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "session remove",
+        "command": "rm", // Could be any other shell command
+        "args": ["-rf", "src/.nicegui/*"],
+        "type": "shell"
+    }]
+}

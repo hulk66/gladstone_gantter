@@ -5,14 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "preLaunchTask": "session remove",
             "name": "UI",
             "type": "python",
             "request": "launch",
             "cwd": "${workspaceFolder}/src",
             "module": "ui.main",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": false
+        },
+        {
+            "preLaunchTask": "session remove",
+            "name": "Test",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/src",
+            "module": "ui.test",
+            "console": "integratedTerminal",
+            "justMyCode": false
         }
+
 
     ]
 }

@@ -115,16 +115,6 @@ class Section:
         {name} = {array}\n
         """
 
-#def gantt_decoder(gantt_dict):
-#    if '__type__' in gantt_dict and gantt_dict['__type__'] == 'Gantt':
-#        return Gantt(gantt_dict["title"], 
-#            gantt_dict["sections"], 
-#            gantt_dict["show_weekends"], 
-#            gantt_dict["show_title"],
-#            gantt_dict["axis_format"],
-#            gantt_dict["tick_interval"] )
-    # return namedtuple('Gantt', gantt_dict.keys())(*gantt_dict.values())
-
 def gantt_decoder(obj):
     if 'sections' in obj:
         return Gantt(**obj)
@@ -145,13 +135,14 @@ def gantt_encoder(obj):
 
 class Gantt:
 
-    def __init__(self, title = "", sections = [], show_weekends = False, 
+    def __init__(self, id = None, title = "", sections = [], show_weekends = False, 
                  show_title = False, axis_format = "%Y-%m-%d", 
                  tick_interval = "auto", show_today = True, 
                  section0bgcolor = "#85A0F9",
                  even_sectionbgcolor =  "#26EFE9", 
                  odd_sectionbgcolor = "#2F78C4", 
                  taskbgcolor = "#fafa05" ) -> None:
+        self.id = id
         self.sections = sections
         self.title = title
         self.show_weekends = show_weekends
@@ -165,7 +156,7 @@ class Gantt:
         self.taskbgcolor = taskbgcolor
 
     def to_json(self):
-       return json.dumps(self, default=lambda o: o.__dict__)
+       return gantt_encoder(self)
 
     def set_title(self, title: str) -> None:
         self.title = title
